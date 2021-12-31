@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora</title>
+        <style>
+            p {
+                margin: 20px;
+            }
+            body {
+                margin: 20px;
+                font: 40px Arial;
+            }
+            h1 {
+                font: 60px Sans-serif;
+                text-align: center;
+            }
+            input {
+                width: 80pt;
+                height: 20pt;
+                font: 20px sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Calculadora</h1>
+        <p>Esta é uma calculadora de teste para melhorar meus conhecimentos em JS</p>
+        <div>Conta à ser feita: <var id='sinal'></var></div>
+        <input type="number" name="ct1" id="ct1">
+        <input type="number" name="ct2" id="ct2">
+        <input type="button" value="Calcular" style="font-size: 20px; width: auto; height: auto;" onclick="calcular($conta_desejada)">
+        <br/>
+        <input type="button" id='adição' value="+" onmouseenter="mostrarTextoSoma()", onmouseout="tirarTextoSoma()", onclick="clickSoma()"> 
+        <br/>
+        <input type="button" id='subtração' value="-"> 
+        <br/>
+        <input type="button" id='multiplicação' value="*">
+        <br/>
+        <input type="button" id='divisão' value="/">
+        <div>
+            Resultado = <var id="res"></var>
+        </div> 
+        <script>
+            // Função de Calcular
+            var conta_desejada = ''
+            function calcular(conta) {
+                var n1 = document.getElementById('ct1').value
+                var n2 = document.getElementById('ct2').value
+                var soma
+                if (conta == '+') {
+                    soma = Number(n1) + Number(n2)
+                }
+                else {
+                    window.alert('Informe a conta desejada antes.')
+                    return
+                }
+                
+                if (conta == '-') {
+                    soma = Number(n1) - Number(n2)
+                }
+                else {
+                    window.alert('Informe a conta desejada antes.')
+                    return
+                }
+                
+                if (conta == '*') {
+                    soma = Number(n1) * Number(n2)
+                }
+                else {
+                    window.alert('Informe a conta desejada antes.')
+                    return
+                }
+
+                if (conta == '/') {
+                    soma = Number(n1) / Number(n2)
+                }
+                else {
+                    window.alert('Informe a conta desejada antes.')
+                    return
+                }
+
+                document.getElementById('res').innerText = soma
+            }
+
+            // Funções de Soma
+            function clickSoma() {
+                conta_desejada = '+'
+                document.getElementById('sinal').innerText = conta_desejada
+                return conta_desejada
+            }
+
+            function mostrarTextoSoma() {
+                var btSomar = document.getElementById('adição').value = 'Soma'
+            }
+
+            function tirarTextoSoma() {
+                var btSomar = document.getElementById('adição').value = '+'
+            }
+
+            // Funções de Subtração
+            // Funções de Multiplicação
+            // Funções de Divisão
+        </script>
+    </body>
+</html>

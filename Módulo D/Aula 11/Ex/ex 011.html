@@ -1,0 +1,32 @@
+<!-- Reecriando o ex 009 em formato de site -->
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador</title>
+</head>
+<body>
+    <h1><strong>Identificador de Nacionalidade</strong></h1>
+    Informe aqui o seu País atual: <input type="text" name="pais" id="pais"> 
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="resultado"></div>
+
+    <script>
+        function verificar() {
+            // Verificar o pais
+            var pais = document.querySelector("input#pais").value
+
+            // Alterar o resultado
+            var res  = document.querySelector("div#resultado")
+            
+            // Conteúdo da div#resultado
+            if (pais === "Brasil") {
+                res.innerHTML = "<p>Você é <strong>brasileiro</strong></p>"
+            } else {
+                res.innerHTML = "<p>Você é <strong>estrangeiro</strong></p>"
+            }
+        }
+    </script>
+</body>
+</html>

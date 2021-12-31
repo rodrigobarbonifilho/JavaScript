@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos <strong>DOM</strong></title>
+    <style>
+        div#area {
+            font: Arial, normal;
+            background: rgb(63, 99, 9);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Intereja...
+    </div>
+    <script>
+        try {
+            var area = window.document.getElementById('area')
+            area.addEventListener('click', clicar)
+            area.addEventListener('mouseenter', entrar)
+            area.addEventListener('mouseout', sair)
+        } 
+        catch {
+            var area = window.document.getElementById('area')
+            area.innerText = 'Houve um erro!'
+        }
+        
+        function clicar() {
+            area.style.background = 'red'
+            area.innerText = 'Clicou'
+        }
+
+        function entrar() {
+            area.innerText = 'Entrou'
+        }
+
+        function sair() {
+            area.style.background = 'rgb(63, 99, 9)'
+            area.innerText = 'Saiu'
+        }
+
+    </script>
+</body>
+</html>
+<!-- Notas -->
+<!--
+    Função em JS:
+        É um conjunto de linhas de código que irão executar apenas quando
+        um evento ocorrer
+    Sintaxa da Função:
+        function nameFunction or nameAction(and can add param) {
+            note block
+        }
+-->
+<!--
+    Ao colocarmos o mouse sobre essa div teriamos o evento DOM:
+        mouseenter
+    E ao mover o mouse sobre a div:
+        mousemove
+    E se clicarmos e segurarmos:
+        mousedown
+    E ao soltarmos:
+        mouseup
+    E se só clicarmos:
+        click
+    E ao sairmos da div:
+        mouseout
+-->
+<!--
+    Podemos tanto habilitar os eventos no código html quanto no JS
+-->
+<!--
+    Não fechar parenteses como o addEventListener
+-->

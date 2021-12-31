@@ -1,0 +1,114 @@
+<!-- Código em HTML -->
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 005</title>
+<!-- Código em HTML -->
+    <style>
+/* Código em CSS */
+        body {
+            background-color: rgb(49, 121, 255);
+            color: white;
+            font-size: 30px;
+            font: normal Arial
+        }
+/* Código em CSS */
+    </style>
+<!-- Código em HTML -->
+</head>
+<body>
+    <h1 style="font-size: 50px;">Entendo o DOM</h1>
+    
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usa o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">Clique em mim</div>
+<!-- Código em HTML -->
+    <script>
+/* Código em JS */
+        var p1 = window.document.getElementsByTagName('p')[1]
+        var corpo = window.document.body
+        /*
+        var d = window.document.getElementById('msg')
+        p1.style.color = "blue"
+        d.innerHTML = 'Estou aguardando'
+        window.document.write(d.innerHTML)
+        */
+       var d = document.getElementsByClassName("div")
+       d = 'oi'
+       window.document.write(`d = ${d}`)
+
+       var e = window.document.querySelector("div#msg")
+       document.write(` | e = ${e.innerHTML}`)
+        /* Código em JS */
+    </script>
+</body>
+</html>
+<!--
+    Div = .
+    ID = #
+
+    DOM
+       ↓
+    Document
+     Object
+     Model
+
+    É um modelo de objetos para documentos dentro do
+   seu navegador para ter acesso a eles por isso temos que saber
+   fazer nossa árvore DOM
+    - window
+    Tudo que é do JavaScript está dentro do window
+    e dentro dele temos outras três outros objetos
+    
+    location | document | history
+    
+    - location
+    Aonde está localizado meu site URL..
+
+    - document
+    O documento atual
+
+    - history
+    Representa o historico para facilitar a navegação
+
+    Dentro do document temos um outro objeto muito imortante que é o html
+    
+    - html
+    É toda a parte html do nosso site
+
+    E dentro do objeto html temos outros dois objetos filhos
+
+    - head
+    A parte de cabeçalho
+     
+
+    - body
+    A parte do Corpo
+
+    E dentro do body temos:
+    
+    h1
+    p
+    p
+     strong
+    div
+    * Nota:
+    Na árvore DOM quem está abaixo é Child e por sua vez
+    quem está imediatamente acima é um parent (pai, mae, vô, vó, tio, tia, primo, prima...)
+-->
+<!--
+    ▼ Selecionando:
+        ▼ por Marca
+            getElementsByTagName()
+        ▼ por ID
+            getElementById()
+        ▼ por Nome
+            getElementByName()
+        ▼ por Classe
+            getElementByClassName()
+        ▼ por Selector
+            querySelector()
+            querySelectorAll()
+-->

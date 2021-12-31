@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.E.T.R.A.N</title>
+</head>
+<body>
+    <h1><strong>Sistema de Multas</strong></h1>
+    Velocidade do carro: <input type="number" name="velocidade" id="velocidade"> Km/h.
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="resultado"></div>
+    <script>        
+        // Funções que decidem qual será o bloco da função calcular
+        function calcular() {
+            // Meu Jeito
+            /*
+            var inputOfSpeed = window.document.querySelector("input#velocidade")
+            var speed        = Number(inputOfSpeed.value)
+            var divOfResult  = window.document.querySelector("div#resultado")
+            var estado       = speed > 60 ? "Multado" : "Não multado"
+            divOfResult.innerHTML = `Você está: ${estado}.`
+            */
+
+            // Jeito Guanabara
+            var txtv = window.document.querySelector("input#velocidade")
+            var res  = window.document.querySelector("div#resultado")
+            var vel  = Number(txtv.value)
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}</strong></p>`
+            if (vel > 60) {
+                res.innerHTML += "<p>Você está <strong>MULTADO</strong> por que ultrapassou o limite de velocidade.</p>"                
+            }
+            res.innerHTML += `<p>Dirija sempre com <strong>cuidado!</strong></p>`
+        }
+
+</script>
+    
+</body>
+</html>
+
+<!--
+Para pequisar:
+  ID: #
+  Classe: .
+-->

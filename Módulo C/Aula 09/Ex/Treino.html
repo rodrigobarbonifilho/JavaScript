@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino</title>
+    <style>
+        body {
+            background-color: cadetblue;
+            font: normal;
+            color: white;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Monte seu texto num <strong>SITE!!!!!!</strong></h1>
+
+    <h2 id="title">Titulo do primeiro parágrafo</h2>
+    <p id="p1">Parágrafo 1</p>
+
+    <script>
+        var novoh2 = prompt('Digite aqui o texto do titulo: ')
+        if (novoh2 == null) {
+            novoh2 = 'Não foi informado'
+        }
+        var h2 = document.getElementById('title').innerHTML = novoh2
+
+        var novop1 = prompt('Digite aqui o texto do primeiro paragrafo: ')
+        if (novop1 == null) {
+            novop1 = 'Não foi informado'
+        }
+        var p1 = document.getElementById("p1").innerHTML = novop1
+
+    </script>
+</body>
+</html>
