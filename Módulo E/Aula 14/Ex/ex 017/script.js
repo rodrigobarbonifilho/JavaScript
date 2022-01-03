@@ -1,4 +1,4 @@
-tabuadaSelect = document.querySelector("select#tabuadaSelect");
+itensDaLista = document.querySelectorAll("li");
 
 function verificaSeEstaVazio(value) {
     if (value == "") {
@@ -19,8 +19,6 @@ function gerarTabuada() {
     }
 
     for (var c = 0; c <= 10; c++) {
-        var option = document.createElement("option");
-        option.innerText = `${tabuada} X ${c} = ${tabuada*c}`;
-        tabuadaSelect.appendChild(option);
+        itensDaLista[c].innerText = `${tabuada} X ${c} = ${tabuada*c}`;
     }
 }

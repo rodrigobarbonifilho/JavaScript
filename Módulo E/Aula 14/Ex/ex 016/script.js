@@ -1,7 +1,7 @@
-var p        = document.querySelector("p#contagem")
+var p = document.querySelector("p#contagem")
 
 function verificaSeEstaVazio(variavel) {
-    if (variavel ==+ "") {
+    if (variavel == "") {
         return true;
     } else {
         return false;
@@ -9,18 +9,19 @@ function verificaSeEstaVazio(variavel) {
 }
 
 function contar() {
-    var inicio   = document.querySelector("input#inicio").value;
-    var fim      = document.querySelector("input#fim").value;
-    var passo    = document.querySelector("input#passo").value;
+    let inicio   = document.querySelector("input#inicio").value;
+    let fim      = document.querySelector("input#fim").value;
+    let passo    = document.querySelector("input#passo").value;
+    let progressiva = true;
 
     if (verificaSeEstaVazio(inicio)) {
-        alert("Impossivel realizar a contagem, é necessário ser infomado o ínicio!");
+        p.innerHTML = "Impossivel contar, informe o Inicio!";
         return false;
     } else if (verificaSeEstaVazio(fim)) {
-        alert("Impossivel realizar a contagem, é necessário ser informado o fim!");
+        p.innerHTML = "Impossivel contar, informe o Fim!";
         return false;
-    } else if (verificaSeEstaVazio(passo)) {
-        alert("Passo é necessário, como não foi informado será considerado como: 1.");
+    } else if (verificaSeEstaVazio(passo) || passo == "0") {
+        alert("Passo é necessário, como não foi informado ou foi colocado como sendo 0; será considerado como: 1.");
         passo = "1";
     }
 
@@ -30,9 +31,21 @@ function contar() {
 
     p.innerHTML = "";
 
-    while (inicio <= fim) {
-        p.innerHTML += `${inicio} ↷ `;
-        inicio += passo;
+    if (inicio > fim) {
+        progressiva = false;
     }
-    p.innerHTML += "🚩";
+
+    if (progressiva) {
+        while (inicio <= fim) {
+            p.innerHTML += `${inicio} \u{1F449} `;
+            inicio += passo;
+        }
+    } else {
+        while (inicio >= fim) {
+            p.innerHTML += `${inicio} \u{1F449} `;
+            inicio -= passo;
+        }
+    }
+
+    p.innerHTML += `\u{1F3C1}`;
 }
